@@ -1,0 +1,290 @@
+/* Reset padrão e tipografia moderna */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+    --primary-color: #e67e22; /* Laranja apetite */
+    --primary-hover: #d35400;
+    --bg-light: #f9f9fb;
+    --card-bg: #ffffff;
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
+    --salgado-color: #e74c3c;
+    --doce-color: #9b59b6;
+    --suco-color: #2ecc71;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Header Fluido e Moderno */
+.cantina-header {
+    background-color: var(--card-bg);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-area h1 {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+}
+
+.logo-area h1 span {
+    color: var(--primary-color);
+}
+
+.logo-area p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.cantina-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.cantina-nav a:hover, .cantina-nav a.active {
+    color: var(--primary-color);
+}
+
+/* Banner Hero */
+.cantina-hero {
+    background: linear-gradient(135deg, #f39c12, var(--primary-color));
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+}
+
+.cantina-hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+/* Filtros de Categorias */
+.categorias-container {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Permite rolagem no celular se faltar espaço */
+}
+
+.btn-categoria {
+    background-color: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-categoria:hover, .btn-categoria.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Container do Grid de Produtos */
+.cantina-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Card Individual de Produto */
+.card-produto {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Tags de Categorias nos Cards */
+.tag-categoria {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.tag-categoria.salgado { background-color: var(--salgado-color); }
+.tag-categoria.doce { background-color: var(--doce-color); }
+.tag-categoria.suco { background-color: var(--suco-color); }
+
+/* Espaço da foto (Usando emojis para fins didáticos/simplicidade) */
+.foto-placeholder {
+    background-color: #fcf3cf;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.detalhes-produto {
+    padding: 20px;
+}
+
+.detalhes-produto h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.preco-acao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preco {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.btn-add {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Seção de Agendamento */
+.secao-agendamento {
+    margin-bottom: 60px;
+}
+
+.card-agendamento {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border-left: 5px solid var(--primary-color);
+}
+
+.card-agendamento h3 {
+    margin-bottom: 10px;
+}
+
+.card-agendamento p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.form-agendamento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.grupo-campo {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-campo label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.grupo-campo select {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #fff;
+    outline: none;
+}
+
+.btn-confirmar-agenda {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-confirmar-agenda:hover {
+    background-color: #1a252f;
+}
+
+/* Footer */
+.cantina-footer {
+    text-align: center;
+    background-color: var(--text-dark);
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade Básica para Celular */
+@media (max-width: 768px) {
+    .cantina-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .cantina-nav a {
+        margin: 0 10px;
+    }
+}
