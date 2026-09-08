@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Cantina Express</title>
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+    <header class="pag-header">
+        <div class="logo-area">
+            <h1>🩵 Cantina<span>Adaile</span></h1>
+        </div>
+        <a href="cantina.html" class="btn-voltar">← Voltar ao cardápio</a>
+    </header>
+
+    <main class="pag-container">
+        <h2>🛒 Finalizar Pedido</h2>
+        
+        <div class="pag-grid">
+            <div class="pag-resumo">
+                <h3>Resumo do Pedido</h3>
+                <div id="itens-pedido"></div>
+                <div class="pag-total">
+                    <span>Total:</span>
+                    <span id="total-pedido">R$ 0,00</span>
+                </div>
+            </div>
+            
+            <div class="pag-pagamento">
+                <h3>💳 Forma de Pagamento</h3>
+                <div class="opcao-pagamento">
+                    <input type="radio" name="pagamento" id="pix" value="pix" checked>
+                    <label for="pix">
+                        <span class="icone-pag">📱</span>
+                        PIX
+                        <small>Pagamento instantâneo</small>
+                    </label>
+                </div>
+                
+                <div class="codigo-pix">
+                    <p>QR Code para pagamento:</p>
+                    <div class="qr-placeholder">[QR CODE]</div>
+                    <p class="codigo-chave">Chave PIX: cantina@express.com.br</p>
+                    <button class="btn-copiar" onclick="copiarChave()">📋 Copiar chave</button>
+                </div>
+                
+                <button class="btn-finalizar" onclick="finalizarPedido()">✅ Confirmar Pagamento</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Recuperar dados do carrinho do localStorage
+        const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+        
+        function exibirResumo() {
+            const container = document.getElementById('itens-pedido');
+            let total = 0;
+            
+            if (carrinho.length === 0) {
+                container.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio</p>';
+                return;
+            }
+            
+            carrinho.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                total += subtotal;
+                
+                container.innerHTML += `
+                    <div class="item-pedido">
+                        <span>${item.nome} x${item.quantidade}</span>
+                        <span>R$ ${subtotal.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('total-pedido').textContent = `R$ ${total.toFixed(2)}`;
+        }
+        
+        function copiarChave() {
+            const chave = 'cantina@express.com.br';
+            navigator.clipboard.writeText(chave);
+            alert('✅ Chave PIX copiada!');
+        }
+        
+        function finalizarPedido() {
+            if (carrinho.length === 0) {
+                alert('❌ Seu carrinho está vazio!');
+                return;
+            }
+            
+            alert('🎉 Pedido confirmado! Retire no balcão em 15 minutos.');
+            localStorage.removeItem('carrinho');
+            window.location.href = 'cantina.html';
+        }
+        
+        exibirResumo();
+    </script>
+</body>
+</html>
