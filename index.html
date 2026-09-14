@@ -16,7 +16,6 @@
         <nav class="cantina-nav">
             <a href="#cardapio" class="active">Cardápio</a>
             <a href="#agendar">Agendar Retirada</a>
-            <a href="#sacola">Minha Sacola (0)</a>
             <a href="pagamento.html" id="link-sacola">Minha Sacola (0)</a>
         </nav>
     </header>
@@ -34,185 +33,196 @@
     </div>
 
     <main class="cantina-container">
-        
         <section id="cardapio" class="grid-produtos">
-            <!-- Novos Salgados -->
-<div class="card-produto">
-    <div class="tag-categoria salgado">Salgado</div>
-    <div class="foto-placeholder">🥟</div>
-    <div class="detalhes-produto">
-        <h3>Coxinha de Frango</h3>
-        <p class="descricao">Massa crocante, recheio suculento de frango desfiado.</p>
-        <div class="preco-acao">
-            <div class="quantidade-controle">
-                <button class="btn-qtd" data-acao="diminuir">-</button>
-                <span class="qtd-numero">1</span>
-                <button class="btn-qtd" data-acao="aumentar">+</button>
-            </div>
-            <span class="preco">R$ 5,50</span>
-            <button class="btn-add">Adicionar</button>
-        </div>
-    </div>
-</div>
-
-<div class="card-produto">
-    <div class="tag-categoria salgado">Salgado</div>
-    <div class="foto-placeholder">🌮</div>
-    <div class="detalhes-produto">
-        <h3>Esfiha de Carne</h3>
-        <p class="descricao">Massa macia, carne temperada e limão a gosto.</p>
-        <div class="preco-acao">
-            <div class="quantidade-controle">
-                <button class="btn-qtd" data-acao="diminuir">-</button>
-                <span class="qtd-numero">1</span>
-                <button class="btn-qtd" data-acao="aumentar">+</button>
-            </div>
-            <span class="preco">R$ 6,00</span>
-            <button class="btn-add">Adicionar</button>
-        </div>
-    </div>
-</div>
-
-<!-- Novos Doces -->
-<div class="card-produto">
-    <div class="tag-categoria doce">Doce</div>
-    <div class="foto-placeholder">🍰</div>
-    <div class="detalhes-produto">
-        <h3>Bolo de Chocolate</h3>
-        <p class="descricao">Fofinho, com cobertura de brigadeiro.</p>
-        <div class="preco-acao">
-            <div class="quantidade-controle">
-                <button class="btn-qtd" data-acao="diminuir">-</button>
-                <span class="qtd-numero">1</span>
-                <button class="btn-qtd" data-acao="aumentar">+</button>
-            </div>
-            <span class="preco">R$ 7,00</span>
-            <button class="btn-add">Adicionar</button>
-        </div>
-    </div>
-</div>
-
-<div class="card-produto">
-    <div class="tag-categoria doce">Doce</div>
-    <div class="foto-placeholder">🍪</div>
-    <div class="detalhes-produto">
-        <h3>Cookie de Chocolate</h3>
-        <p class="descricao">Crocante por fora, macio por dentro com pedaços de chocolate.</p>
-        <div class="preco-acao">
-            <div class="quantidade-controle">
-                <button class="btn-qtd" data-acao="diminuir">-</button>
-                <span class="qtd-numero">1</span>
-                <button class="btn-qtd" data-acao="aumentar">+</button>
-            </div>
-            <span class="preco">R$ 4,50</span>
-            <button class="btn-add">Adicionar</button>
-        </div>
-    </div>
-</div>
-
-<!-- Novos Sucos -->
-<div class="card-produto">
-    <div class="tag-categoria suco">Bebida</div>
-    <div class="foto-placeholder">🍍</div>
-    <div class="detalhes-produto">
-        <h3>Suco de Abacaxi com Hortelã</h3>
-        <p class="descricao">Refrescante e natural.</p>
-        <div class="preco-acao">
-            <div class="quantidade-controle">
-                <button class="btn-qtd" data-acao="diminuir">-</button>
-                <span class="qtd-numero">1</span>
-                <button class="btn-qtd" data-acao="aumentar">+</button>
-            </div>
-            <span class="preco">R$ 5,00</span>
-            <button class="btn-add">Adicionar</button>
-        </div>
-    </div>
-</div>
-
-<div class="card-produto">
-    <div class="tag-categoria suco">Bebida</div>
-    <div class="foto-placeholder">🍓</div>
-    <div class="detalhes-produto">
-        <h3>Suco de Morango com Leite</h3>
-        <p class="descricao">Cremoso, doce na medida certa.</p>
-        <div class="preco-acao">
-            <div class="quantidade-controle">
-                <button class="btn-qtd" data-acao="diminuir">-</button>
-                <span class="qtd-numero">1</span>
-                <button class="btn-qtd" data-acao="aumentar">+</button>
-            </div>
-            <span class="preco">R$ 6,50</span>
-            <button class="btn-add">Adicionar</button>
-        </div>
-    </div>
-</div>
             
+            <!-- PRODUTO 1 -->
             <div class="card-produto">
                 <div class="tag-categoria salgado">Salgado</div>
                 <div class="foto-placeholder">🥐</div>
                 <div class="detalhes-produto">
                     <h3>Assado de Frango com Catupiry</h3>
                     <p class="descricao">Massa leve, recheio cremoso e assado na hora.</p>
-                    <d <div class="preco-acao">
+                    <div class="preco-acao">
                         <div class="quantidade-controle">
-                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
                             <span class="qtd-numero">1</span>
                             <button class="btn-qtd" data-acao="aumentar">+</button>
                         </div>
                         <span class="preco">R$ 6,50</span>
                         <button class="btn-add">Adicionar</button>
                     </div>
+                </div>
             </div>
 
+            <!-- PRODUTO 2 -->
             <div class="card-produto">
                 <div class="tag-categoria salgado">Salgado</div>
                 <div class="foto-placeholder">🍕</div>
                 <div class="detalhes-produto">
                     <h3>Mini Pizza de Calabresa</h3>
                     <p class="descricao">Molho artesanal, queijo derretido e oregano.</p>
-                    <d <div class="preco-acao">
+                    <div class="preco-acao">
                         <div class="quantidade-controle">
-                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
                             <span class="qtd-numero">1</span>
                             <button class="btn-qtd" data-acao="aumentar">+</button>
                         </div>
-                        <span class="preco">R$ 6,50</span>
+                        <span class="preco">R$ 7,00</span>
                         <button class="btn-add">Adicionar</button>
                     </div>
+                </div>
             </div>
 
+            <!-- PRODUTO 3 - COXINHA (NOVO) -->
+            <div class="card-produto">
+                <div class="tag-categoria salgado">Salgado</div>
+                <div class="foto-placeholder">🥟</div>
+                <div class="detalhes-produto">
+                    <h3>Coxinha de Frango</h3>
+                    <p class="descricao">Massa crocante, recheio suculento de frango desfiado.</p>
+                    <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 5,50</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 4 - ESFIHA (NOVO) -->
+            <div class="card-produto">
+                <div class="tag-categoria salgado">Salgado</div>
+                <div class="foto-placeholder">🌮</div>
+                <div class="detalhes-produto">
+                    <h3>Esfiha de Carne</h3>
+                    <p class="descricao">Massa macia, carne temperada e limão a gosto.</p>
+                    <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 6,00</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 5 - BROWNIE -->
             <div class="card-produto">
                 <div class="tag-categoria doce">Doce</div>
                 <div class="foto-placeholder">🍫</div>
                 <div class="detalhes-produto">
                     <h3>Brownie</h3>
                     <p class="descricao">Cremoso por dentro, com casquinha crocante por fora.</p>
-                    <d <div class="preco-acao">
+                    <div class="preco-acao">
                         <div class="quantidade-controle">
-                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
                             <span class="qtd-numero">1</span>
                             <button class="btn-qtd" data-acao="aumentar">+</button>
                         </div>
-                        <span class="preco">R$ 6,50</span>
+                        <span class="preco">R$ 5,00</span>
                         <button class="btn-add">Adicionar</button>
                     </div>
+                </div>
             </div>
 
+            <!-- PRODUTO 6 - BOLO (NOVO) -->
+            <div class="card-produto">
+                <div class="tag-categoria doce">Doce</div>
+                <div class="foto-placeholder">🍰</div>
+                <div class="detalhes-produto">
+                    <h3>Bolo de Chocolate</h3>
+                    <p class="descricao">Fofinho, com cobertura de brigadeiro.</p>
+                    <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 7,00</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 7 - COOKIE (NOVO) -->
+            <div class="card-produto">
+                <div class="tag-categoria doce">Doce</div>
+                <div class="foto-placeholder">🍪</div>
+                <div class="detalhes-produto">
+                    <h3>Cookie de Chocolate</h3>
+                    <p class="descricao">Crocante por fora, macio por dentro com pedaços de chocolate.</p>
+                    <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 4,50</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 8 - SUCO LARANJA -->
             <div class="card-produto">
                 <div class="tag-categoria suco">Bebida</div>
                 <div class="foto-placeholder">🧃</div>
                 <div class="detalhes-produto">
                     <h3>Suco Natural de Laranja (300ml)</h3>
                     <p class="descricao">Puro fruto, sem adição de açúcar. Gelado.</p>
-                    <d <div class="preco-acao">
+                    <div class="preco-acao">
                         <div class="quantidade-controle">
-                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 4,50</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 9 - SUCO ABACAXI (NOVO) -->
+            <div class="card-produto">
+                <div class="tag-categoria suco">Bebida</div>
+                <div class="foto-placeholder">🍍</div>
+                <div class="detalhes-produto">
+                    <h3>Suco de Abacaxi com Hortelã</h3>
+                    <p class="descricao">Refrescante e natural.</p>
+                    <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 5,00</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 10 - SUCO MORANGO (NOVO) -->
+            <div class="card-produto">
+                <div class="tag-categoria suco">Bebida</div>
+                <div class="foto-placeholder">🍓</div>
+                <div class="detalhes-produto">
+                    <h3>Suco de Morango com Leite</h3>
+                    <p class="descricao">Cremoso, doce na medida certa.</p>
+                    <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">−</button>
                             <span class="qtd-numero">1</span>
                             <button class="btn-qtd" data-acao="aumentar">+</button>
                         </div>
                         <span class="preco">R$ 6,50</span>
                         <button class="btn-add">Adicionar</button>
                     </div>
+                </div>
             </div>
 
         </section>
@@ -226,19 +236,19 @@
                     <div class="grupo-campo">
                         <label for="dia">Selecione o Dia:</label>
                         <select id="dia" name="dia">
-                            <option value="hoje">Segunda-feira</option>
-                            <option value="amanha">Terça-feira</option>
+                            <option value="segunda">Segunda-feira</option>
+                            <option value="terca">Terça-feira</option>
                             <option value="quarta">Quarta-feira</option>
-                            <option value="quarta">Quinta-feira</option>
-                            <option value="quarta">Sexta-feira</option>
+                            <option value="quinta">Quinta-feira</option>
+                            <option value="sexta">Sexta-feira</option>
                         </select>
                     </div>
 
                     <div class="grupo-campo">
                         <label for="intervalo">Escolha o Intervalo:</label>
                         <select id="intervalo" name="intervalo">
-                            <option value="int1"> Intervalo manhã (10:00 às 10:20)</option>
-                            <option value="int2"> Intervalo tarde (15:35 às 16:00)</option>
+                            <option value="int1">Intervalo manhã (10:00 às 10:20)</option>
+                            <option value="int2">Intervalo tarde (15:35 às 16:00)</option>
                         </select>
                     </div>
 
@@ -254,102 +264,159 @@
     </footer>
 
     <script>
-// Dados dos produtos
-const produtos = [
-    { id: 1, nome: 'Assado de Frango com Catupiry', preco: 6.50, categoria: 'salgado' },
-    { id: 2, nome: 'Mini Pizza de Calabresa', preco: 7.00, categoria: 'salgado' },
-    { id: 3, nome: 'Coxinha de Frango', preco: 5.50, categoria: 'salgado' },
-    { id: 4, nome: 'Esfiha de Carne', preco: 6.00, categoria: 'salgado' },
-    { id: 5, nome: 'Brownie', preco: 5.00, categoria: 'doce' },
-    { id: 6, nome: 'Bolo de Chocolate', preco: 7.00, categoria: 'doce' },
-    { id: 7, nome: 'Cookie de Chocolate', preco: 4.50, categoria: 'doce' },
-    { id: 8, nome: 'Suco Natural de Laranja', preco: 4.50, categoria: 'suco' },
-    { id: 9, nome: 'Suco de Abacaxi com Hortelã', preco: 5.00, categoria: 'suco' },
-    { id: 10, nome: 'Suco de Morango com Leite', preco: 6.50, categoria: 'suco' }
-];
+        // ============================================
+        // DADOS DOS PRODUTOS
+        // ============================================
+        const produtos = [
+            { id: 1, nome: 'Assado de Frango com Catupiry', preco: 6.50, categoria: 'salgado' },
+            { id: 2, nome: 'Mini Pizza de Calabresa', preco: 7.00, categoria: 'salgado' },
+            { id: 3, nome: 'Coxinha de Frango', preco: 5.50, categoria: 'salgado' },
+            { id: 4, nome: 'Esfiha de Carne', preco: 6.00, categoria: 'salgado' },
+            { id: 5, nome: 'Brownie', preco: 5.00, categoria: 'doce' },
+            { id: 6, nome: 'Bolo de Chocolate', preco: 7.00, categoria: 'doce' },
+            { id: 7, nome: 'Cookie de Chocolate', preco: 4.50, categoria: 'doce' },
+            { id: 8, nome: 'Suco Natural de Laranja', preco: 4.50, categoria: 'suco' },
+            { id: 9, nome: 'Suco de Abacaxi com Hortelã', preco: 5.00, categoria: 'suco' },
+            { id: 10, nome: 'Suco de Morango com Leite', preco: 6.50, categoria: 'suco' }
+        ];
 
-// Estado do carrinho
-let carrinho = [];
-let contadorCarrinho = 0;
+        // ============================================
+        // ESTADO DO CARRINHO
+        // ============================================
+        let carrinho = [];
 
-// Função para atualizar a sacola
-function atualizarSacola() {
-    const sacolaLink = document.querySelector('.cantina-nav a[href="#sacola"]');
-    const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
-    sacolaLink.textContent = `Minha Sacola (${totalItens})`;
-}
-
-// Função para adicionar ao carrinho
-function adicionarAoCarrinho(produtoId, quantidade) {
-    const produto = produtos.find(p => p.id === produtoId);
-    if (!produto) return;
-
-    const itemExistente = carrinho.find(item => item.id === produtoId);
-    
-    if (itemExistente) {
-        itemExistente.quantidade += quantidade;
-    } else {
-        carrinho.push({
-            ...produto,
-            quantidade: quantidade
-        });
-    }
-    
-    atualizarSacola();
-    alert(`✅ ${produto.nome} (${quantidade}x) adicionado ao carrinho!`);
-}
-
-// Configurar eventos dos botões de quantidade e adicionar
-document.querySelectorAll('.card-produto').forEach((card, index) => {
-    const btnDiminuir = card.querySelector('.btn-qtd[data-acao="diminuir"]');
-    const btnAumentar = card.querySelector('.btn-qtd[data-acao="aumentar"]');
-    const qtdNumero = card.querySelector('.qtd-numero');
-    const btnAdd = card.querySelector('.btn-add');
-    const produtoId = index + 1;
-    
-    // Controle de quantidade
-    btnDiminuir.addEventListener('click', () => {
-        let valor = parseInt(qtdNumero.textContent);
-        if (valor > 1) {
-            valor--;
-            qtdNumero.textContent = valor;
+        // ============================================
+        // FUNÇÕES DO CARRINHO
+        // ============================================
+        function atualizarSacola() {
+            const sacolaLink = document.getElementById('link-sacola');
+            const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
+            sacolaLink.textContent = `Minha Sacola (${totalItens})`;
+            
+            // Salvar no localStorage para a página de pagamento
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }
-    });
-    
-    btnAumentar.addEventListener('click', () => {
-        let valor = parseInt(qtdNumero.textContent);
-        valor++;
-        qtdNumero.textContent = valor;
-    });
-    
-    // Botão adicionar
-    btnAdd.addEventListener('click', () => {
-        const quantidade = parseInt(qtdNumero.textContent);
-        adicionarAoCarrinho(produtoId, quantidade);
-        qtdNumero.textContent = 1; // Resetar quantidade
-    });
-});
 
-// Filtros de categoria
-document.querySelectorAll('.btn-categoria').forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remover classe active de todos
-        document.querySelectorAll('.btn-categoria').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        const categoria = btn.textContent.toLowerCase();
-        const cards = document.querySelectorAll('.card-produto');
-        
-        cards.forEach(card => {
-            const tag = card.querySelector('.tag-categoria');
-            if (categoria === 'all' || tag.textContent.toLowerCase() === categoria) {
-                card.style.display = 'block';
+        function adicionarAoCarrinho(produtoId, quantidade) {
+            const produto = produtos.find(p => p.id === produtoId);
+            if (!produto) return;
+
+            const itemExistente = carrinho.find(item => item.id === produtoId);
+            
+            if (itemExistente) {
+                itemExistente.quantidade += quantidade;
             } else {
-                card.style.display = 'none';
+                carrinho.push({
+                    ...produto,
+                    quantidade: quantidade
+                });
+            }
+            
+            atualizarSacola();
+            
+            // Feedback visual
+            const btn = document.querySelector(`.card-produto:nth-child(${produtoId}) .btn-add`);
+            btn.textContent = '✅ Adicionado!';
+            btn.style.background = '#2ecc71';
+            setTimeout(() => {
+                btn.textContent = 'Adicionar';
+                btn.style.background = '#e67e22';
+            }, 1500);
+        }
+
+        // ============================================
+        // CONFIGURAR EVENTOS DOS PRODUTOS
+        // ============================================
+        document.querySelectorAll('.card-produto').forEach((card, index) => {
+            const produtoId = index + 1;
+            const btnDiminuir = card.querySelector('.btn-qtd[data-acao="diminuir"]');
+            const btnAumentar = card.querySelector('.btn-qtd[data-acao="aumentar"]');
+            const qtdNumero = card.querySelector('.qtd-numero');
+            const btnAdd = card.querySelector('.btn-add');
+            
+            // Controle de quantidade
+            if (btnDiminuir) {
+                btnDiminuir.addEventListener('click', () => {
+                    let valor = parseInt(qtdNumero.textContent);
+                    if (valor > 1) {
+                        valor--;
+                        qtdNumero.textContent = valor;
+                    }
+                });
+            }
+            
+            if (btnAumentar) {
+                btnAumentar.addEventListener('click', () => {
+                    let valor = parseInt(qtdNumero.textContent);
+                    valor++;
+                    qtdNumero.textContent = valor;
+                });
+            }
+            
+            // Botão adicionar
+            if (btnAdd) {
+                btnAdd.addEventListener('click', () => {
+                    const quantidade = parseInt(qtdNumero.textContent);
+                    adicionarAoCarrinho(produtoId, quantidade);
+                    qtdNumero.textContent = 1; // Resetar quantidade
+                });
             }
         });
-    });
-});
-</script>
+
+        // ============================================
+        // FILTROS DE CATEGORIA
+        // ============================================
+        document.querySelectorAll('.btn-categoria').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remover classe active de todos
+                document.querySelectorAll('.btn-categoria').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const categoria = btn.textContent.toLowerCase().trim();
+                const cards = document.querySelectorAll('.card-produto');
+                
+                cards.forEach(card => {
+                    const tag = card.querySelector('.tag-categoria');
+                    if (!tag) return;
+                    
+                    const tagText = tag.textContent.toLowerCase().trim();
+                    
+                    if (categoria === 'all') {
+                        card.style.display = 'block';
+                    } else if (categoria.includes('salgado') && tagText === 'salgado') {
+                        card.style.display = 'block';
+                    } else if (categoria.includes('doce') && tagText === 'doce') {
+                        card.style.display = 'block';
+                    } else if ((categoria.includes('suco') || categoria.includes('bebida')) && tagText === 'suco') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ============================================
+        // AGENDAMENTO
+        // ============================================
+        document.querySelector('.btn-confirmar-agenda').addEventListener('click', () => {
+            const dia = document.getElementById('dia').value;
+            const intervalo = document.getElementById('intervalo').value;
+            
+            if (carrinho.length === 0) {
+                alert('⚠️ Adicione produtos ao carrinho antes de agendar!');
+                return;
+            }
+            
+            alert(`✅ Pedido agendado para ${dia} no ${intervalo === 'int1' ? 'primeiro' : 'segundo'} intervalo!`);
+            window.location.href = 'pagamento.html';
+        });
+
+        // ============================================
+        // INICIALIZAR
+        // ============================================
+        atualizarSacola();
+    </script>
+
 </body>
 </html>

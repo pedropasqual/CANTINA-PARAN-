@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="pagamento.css">
 </head>
 <body>
+
     <header class="pag-header">
         <div class="logo-area">
             <h1>🩵 Cantina<span>Adaile</span></h1>
+            <p>Finalize seu pedido</p>
         </div>
-        <a href="cantina.html" class="btn-voltar">← Voltar ao cardápio</a>
+        <a href="index.html" class="btn-voltar">← Voltar ao cardápio</a>
     </header>
 
     <main class="pag-container">
         <h2>🛒 Finalizar Pedido</h2>
         
         <div class="pag-grid">
+            <!-- RESUMO DO PEDIDO -->
             <div class="pag-resumo">
-                <h3>Resumo do Pedido</h3>
+                <h3>📋 Resumo do Pedido</h3>
                 <div id="itens-pedido"></div>
                 <div class="pag-total">
                     <span>Total:</span>
@@ -27,75 +30,152 @@
                 </div>
             </div>
             
+            <!-- PAGAMENTO -->
             <div class="pag-pagamento">
                 <h3>💳 Forma de Pagamento</h3>
+                
                 <div class="opcao-pagamento">
                     <input type="radio" name="pagamento" id="pix" value="pix" checked>
                     <label for="pix">
                         <span class="icone-pag">📱</span>
-                        PIX
-                        <small>Pagamento instantâneo</small>
+                        <div>
+                            <strong>PIX</strong>
+                            <small>Pagamento instantâneo</small>
+                        </div>
                     </label>
                 </div>
                 
                 <div class="codigo-pix">
-                    <p>QR Code para pagamento:</p>
-                    <div class="qr-placeholder">[QR CODE]</div>
-                    <p class="codigo-chave">Chave PIX: cantina@express.com.br</p>
-                    <button class="btn-copiar" onclick="copiarChave()">📋 Copiar chave</button>
+                    <p>📲 Escaneie o QR Code ou copie a chave:</p>
+                    <div class="qr-placeholder">
+                        <span>QR Code</span>
+                    </div>
+                    <p class="codigo-chave">
+                        <strong>Chave PIX:</strong> cantina@express.com.br
+                    </p>
+                    <button class="btn-copiar" onclick="copiarChave()">
+                        📋 Copiar chave
+                    </button>
                 </div>
                 
-                <button class="btn-finalizar" onclick="finalizarPedido()">✅ Confirmar Pagamento</button>
+                <button class="btn-finalizar" onclick="finalizarPedido()">
+                    ✅ Confirmar Pagamento
+                </button>
             </div>
         </div>
     </main>
 
+    <footer class="pag-footer">
+        <p>&copy; 2026 Cantina Express | Módulo de Apoio Saiba Escolar</p>
+    </footer>
+
     <script>
-        // Recuperar dados do carrinho do localStorage
+        // ============================================
+        // RECUPERAR DADOS DO CARRINHO
+        // ============================================
         const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
-        
+
+        // ============================================
+        // EXIBIR RESUMO
+        // ============================================
         function exibirResumo() {
             const container = document.getElementById('itens-pedido');
+            const totalElement = document.getElementById('total-pedido');
             let total = 0;
-            
+
             if (carrinho.length === 0) {
-                container.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio</p>';
+                container.innerHTML = `
+                    <div class="carrinho-vazio">
+                        <p>🛒 Seu carrinho está vazio</p>
+                        <a href="index.html" class="btn-voltar-cardapio">Ver cardápio</a>
+                    </div>
+                `;
+                totalElement.textContent = 'R$ 0,00';
                 return;
             }
+
+            container.innerHTML = '';
             
             carrinho.forEach(item => {
                 const subtotal = item.preco * item.quantidade;
                 total += subtotal;
-                
-                container.innerHTML += `
-                    <div class="item-pedido">
-                        <span>${item.nome} x${item.quantidade}</span>
-                        <span>R$ ${subtotal.toFixed(2)}</span>
+
+                const div = document.createElement('div');
+                div.className = 'item-pedido';
+                div.innerHTML = `
+                    <div>
+                        <span class="item-nome">${item.nome}</span>
+                        <span class="item-qtd">x${item.quantidade}</span>
                     </div>
+                    <span class="item-preco">R$ ${subtotal.toFixed(2)}</span>
                 `;
+                container.appendChild(div);
             });
-            
-            document.getElementById('total-pedido').textContent = `R$ ${total.toFixed(2)}`;
+
+            totalElement.textContent = `R$ ${total.toFixed(2)}`;
         }
-        
+
+        // ============================================
+        // FUNÇÕES DE PAGAMENTO
+        // ============================================
         function copiarChave() {
             const chave = 'cantina@express.com.br';
-            navigator.clipboard.writeText(chave);
-            alert('✅ Chave PIX copiada!');
+            navigator.clipboard.writeText(chave)
+                .then(() => {
+                    const btn = document.querySelector('.btn-copiar');
+                    btn.textContent = '✅ Copiado!';
+                    btn.style.background = '#2ecc71';
+                    setTimeout(() => {
+                        btn.textContent = '📋 Copiar chave';
+                        btn.style.background = '#e2e8f0';
+                    }, 2000);
+                })
+                .catch(() => {
+                    alert('📋 Chave PIX: cantina@express.com.br');
+                });
         }
-        
+
         function finalizarPedido() {
             if (carrinho.length === 0) {
                 alert('❌ Seu carrinho está vazio!');
                 return;
             }
-            
-            alert('🎉 Pedido confirmado! Retire no balcão em 15 minutos.');
-            localStorage.removeItem('carrinho');
-            window.location.href = 'cantina.html';
+
+            const confirmar = confirm('Confirma o pagamento via PIX?');
+            if (!confirmar) return;
+
+            // Simular processamento
+            const btn = document.querySelector('.btn-finalizar');
+            btn.textContent = '⏳ Processando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert('🎉 Pedido confirmado!');
+                alert('📱 Retire seu pedido no balcão em 15 minutos.');
+                
+                // Limpar carrinho
+                localStorage.removeItem('carrinho');
+                
+                // Redirecionar
+                window.location.href = 'index.html';
+            }, 1500);
         }
-        
+
+        // ============================================
+        // INICIALIZAR
+        // ============================================
         exibirResumo();
+
+        // Atualizar total quando voltar da página anterior
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'carrinho') {
+                const novoCarrinho = JSON.parse(e.newValue || '[]');
+                carrinho.length = 0;
+                carrinho.push(...novoCarrinho);
+                exibirResumo();
+            }
+        });
     </script>
+
 </body>
 </html>

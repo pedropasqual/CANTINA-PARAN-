@@ -2,103 +2,227 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 :root {
     --primary-color: #e67e22;
+    --primary-hover: #d35400;
     --bg-light: #f9f9fb;
     --card-bg: #ffffff;
     --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
 }
 
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
 .pag-header {
-    background: white;
+    background: var(--card-bg);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo-area h1 {
     font-size: 1.6rem;
+    color: var(--text-dark);
 }
 
 .logo-area h1 span {
     color: var(--primary-color);
 }
 
+.logo-area p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
 .btn-voltar {
     color: var(--text-dark);
     text-decoration: none;
     font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s;
 }
 
+.btn-voltar:hover {
+    background: #f1f3f5;
+    color: var(--primary-color);
+}
+
+/* ===== CONTAINER ===== */
 .pag-container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+    flex: 1;
 }
 
 .pag-container h2 {
     margin-bottom: 30px;
+    font-size: 1.8rem;
 }
 
+/* ===== GRID ===== */
 .pag-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
-.pag-resumo, .pag-pagamento {
-    background: white;
+/* ===== RESUMO ===== */
+.pag-resumo,
+.pag-pagamento {
+    background: var(--card-bg);
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pag-resumo h3,
+.pag-pagamento h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* ===== ITENS DO PEDIDO ===== */
+#itens-pedido {
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .item-pedido {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f3f5;
 }
 
+.item-pedido:last-child {
+    border-bottom: none;
+}
+
+.item-nome {
+    font-weight: 500;
+}
+
+.item-qtd {
+    color: var(--text-muted);
+    margin-left: 8px;
+    font-size: 0.9rem;
+}
+
+.item-preco {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ===== TOTAL ===== */
 .pag-total {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-top: 20px;
     padding-top: 20px;
     border-top: 2px solid var(--primary-color);
 }
 
+.pag-total span:last-child {
+    color: var(--primary-color);
+}
+
+/* ===== CARRINHO VAZIO ===== */
+.carrinho-vazio {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+}
+
+.carrinho-vazio p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.btn-voltar-cardapio {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-voltar-cardapio:hover {
+    background: var(--primary-hover);
+}
+
+/* ===== PAGAMENTO ===== */
 .opcao-pagamento {
     margin: 20px 0;
     padding: 15px;
     border: 2px solid #e2e8f0;
     border-radius: 8px;
+    background: #fafafa;
+    transition: border-color 0.3s;
+}
+
+.opcao-pagamento:has(input:checked) {
+    border-color: var(--primary-color);
+    background: #fff8f0;
 }
 
 .opcao-pagamento label {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     cursor: pointer;
 }
 
 .icone-pag {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
+.opcao-pagamento input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-color);
+}
+
+.opcao-pagamento strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.opcao-pagamento small {
+    color: var(--text-muted);
+}
+
+/* ===== CÓDIGO PIX ===== */
 .codigo-pix {
     background: #f8f9fa;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     text-align: center;
     margin: 20px 0;
+    border: 1px dashed #e2e8f0;
+}
+
+.codigo-pix p {
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .qr-placeholder {
@@ -110,27 +234,33 @@
     align-items: center;
     justify-content: center;
     border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border: 2px solid #d1d5db;
 }
 
 .codigo-chave {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 10px 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin: 15px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
 }
 
-.btn-copiar, .btn-finalizar {
+/* ===== BOTÕES ===== */
+.btn-copiar {
     width: 100%;
     padding: 12px;
     border: none;
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-}
-
-.btn-copiar {
     background: #e2e8f0;
-    color: #2c3e50;
+    color: var(--text-dark);
+    font-size: 0.95rem;
 }
 
 .btn-copiar:hover {
@@ -138,6 +268,13 @@
 }
 
 .btn-finalizar {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
     background: #2ecc71;
     color: white;
     font-size: 1.1rem;
@@ -146,16 +283,74 @@
 
 .btn-finalizar:hover {
     background: #27ae60;
+    transform: scale(1.02);
 }
 
-.carrinho-vazio {
+.btn-finalizar:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== FOOTER ===== */
+.pag-footer {
     text-align: center;
-    color: #999;
+    background-color: var(--text-dark);
+    color: white;
     padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
 }
 
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+    .pag-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+
     .pag-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pag-container h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .opcao-pagamento label {
+        flex-wrap: wrap;
+    }
+
+    .qr-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+
+    .item-pedido {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pag-resumo,
+    .pag-pagamento {
+        padding: 15px;
+    }
+
+    .codigo-pix {
+        padding: 15px;
+    }
+
+    .btn-finalizar {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .pag-total {
+        font-size: 1.1rem;
     }
 }
