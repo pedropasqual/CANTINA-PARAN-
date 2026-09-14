@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina Express - Saiba Escolar</title>
+    <link rel="stylesheet" href="cantina.css">
+</head>
+<body>
+
+    <header class="cantina-header">
+        <div class="logo-area">
+            <h1> 🩵 Cantina<span>Adaile</span></h1>
+            <p>Pule a fila, aproveite o intervalo!</p>
+        </div>
+        <nav class="cantina-nav">
+            <a href="#cardapio" class="active">Cardápio</a>
+            <a href="#agendar">Agendar Retirada</a>
+            <a href="pagamento.html" id="link-sacola">Minha Sacola (0)</a>
+        </nav>
+    </header>
+
+    <section class="cantina-hero">
+        <h2>Compre sua ficha antecipada</h2>
+        <p>Escolha o seu lanche, defina o horário e retire direto no balcão de entrega rápida.</p>
+    </section>
+
+    <div class="categorias-container">
+        <button class="btn-categoria active">All</button>
+        <button class="btn-categoria">🍕 Salgados</button>
+        <button class="btn-categoria">🍫 Doces</button>
+        <button class="btn-categoria">🧃 Sucos & Bebidas</button>
+    </div>
+
+    <main class="cantina-container">
+        
+        <section id="cardapio" class="grid-produtos">
+            
+            <div class="card-produto">
+                <div class="tag-categoria salgado">Salgado</div>
+                <div class="foto-placeholder">🥐</div>
+                <div class="detalhes-produto">
+                    <h3>Assado de Frango com Catupiry</h3>
+                    <p class="descricao">Massa leve, recheio cremoso e assado na hora.</p>
+                    <d <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 6,50</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="tag-categoria salgado">Salgado</div>
+                <div class="foto-placeholder">🍕</div>
+                <div class="detalhes-produto">
+                    <h3>Mini Pizza de Calabresa</h3>
+                    <p class="descricao">Molho artesanal, queijo derretido e oregano.</p>
+                    <d <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 6,50</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="tag-categoria doce">Doce</div>
+                <div class="foto-placeholder">🍫</div>
+                <div class="detalhes-produto">
+                    <h3>Brownie</h3>
+                    <p class="descricao">Cremoso por dentro, com casquinha crocante por fora.</p>
+                    <d <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 6,50</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="tag-categoria suco">Bebida</div>
+                <div class="foto-placeholder">🧃</div>
+                <div class="detalhes-produto">
+                    <h3>Suco Natural de Laranja (300ml)</h3>
+                    <p class="descricao">Puro fruto, sem adição de açúcar. Gelado.</p>
+                    <d <div class="preco-acao">
+                        <div class="quantidade-controle">
+                            <button class="btn-qtd" data-acao="diminuir">-</button>
+                            <span class="qtd-numero">1</span>
+                            <button class="btn-qtd" data-acao="aumentar">+</button>
+                        </div>
+                        <span class="preco">R$ 6,50</span>
+                        <button class="btn-add">Adicionar</button>
+                    </div>
+            </div>
+
+        </section>
+
+        <section id="agendar" class="secao-agendamento">
+            <div class="card-agendamento">
+                <h3>📅 Agendar Horário de Retirada</h3>
+                <p>Para evitar qualquer tipo de aglomeração, informe quando deseja retirar:</p>
+                
+                <form class="form-agendamento">
+                    <div class="grupo-campo">
+                        <label for="dia">Selecione o Dia:</label>
+                        <select id="dia" name="dia">
+                            <option value="hoje">Segunda-feira</option>
+                            <option value="amanha">Terça-feira</option>
+                            <option value="quarta">Quarta-feira</option>
+                            <option value="quarta">Quinta-feira</option>
+                            <option value="quarta">Sexta-feira</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="intervalo">Escolha o Intervalo:</label>
+                        <select id="intervalo" name="intervalo">
+                            <option value="int1"> Intervalo manhã (10:00 às 10:20)</option>
+                            <option value="int2"> Intervalo tarde (15:35 às 16:00)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn-confirmar-agenda">Confirmar Horário e Ir para o Pagamento</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="cantina-footer">
+        <p>&copy; 2026 Cantina Express | Módulo de Apoio Saiba Escolar</p>
+    </footer>
+
+    <script>
+// Dados dos produtos
+const produtos = [
+    { id: 1, nome: 'Assado de Frango com Catupiry', preco: 6.50, categoria: 'salgado' },
+    { id: 2, nome: 'Mini Pizza de Calabresa', preco: 7.00, categoria: 'salgado' },
+    { id: 3, nome: 'Brownie', preco: 5.00, categoria: 'doce' },
+    { id: 4, nome: 'Suco Natural de Laranja', preco: 4.50, categoria: 'suco' }
+];
+
+// Estado do carrinho
+let carrinho = [];
+let contadorCarrinho = 0;
+
+// Função para atualizar a sacola
+function atualizarSacola() {
+    const sacolaLink = document.getElementById('link-sacola');
+
+    const totalItens = carrinho.reduce(
+        (total, item) => total + item.quantidade,
+        0
+    );
+
+    sacolaLink.textContent = `Minha Sacola (${totalItens})`;
+}
+
+// Função para adicionar ao carrinho
+function adicionarAoCarrinho(produtoId, quantidade) {
+    const produto = produtos.find(p => p.id === produtoId);
+    if (!produto) return;
+
+    const itemExistente = carrinho.find(item => item.id === produtoId);
+    
+    if (itemExistente) {
+        itemExistente.quantidade += quantidade;
+    } else {
+        carrinho.push({
+            ...produto,
+            quantidade: quantidade
+        });
+    }
+    
+    atualizarSacola();
+    alert(`✅ ${produto.nome} (${quantidade}x) adicionado ao carrinho!`);
+}
+
+// Configurar eventos dos botões de quantidade e adicionar
+document.querySelectorAll('.card-produto').forEach((card, index) => {
+    const btnDiminuir = card.querySelector('.btn-qtd[data-acao="diminuir"]');
+    const btnAumentar = card.querySelector('.btn-qtd[data-acao="aumentar"]');
+    const qtdNumero = card.querySelector('.qtd-numero');
+    const btnAdd = card.querySelector('.btn-add');
+    const produtoId = index + 1;
+    
+    // Controle de quantidade
+    btnDiminuir.addEventListener('click', () => {
+        let valor = parseInt(qtdNumero.textContent);
+        if (valor > 1) {
+            valor--;
+            qtdNumero.textContent = valor;
+        }
+    });
+    
+    btnAumentar.addEventListener('click', () => {
+        let valor = parseInt(qtdNumero.textContent);
+        valor++;
+        qtdNumero.textContent = valor;
+    });
+    
+    // Botão adicionar
+    btnAdd.addEventListener('click', () => {
+        const quantidade = parseInt(qtdNumero.textContent);
+        adicionarAoCarrinho(produtoId, quantidade);
+        qtdNumero.textContent = 1; // Resetar quantidade
+    });
+});
+
+// Filtros de categoria
+document.querySelectorAll('.btn-categoria').forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remover classe active de todos
+        document.querySelectorAll('.btn-categoria').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const categoria = btn.textContent.toLowerCase();
+        const cards = document.querySelectorAll('.card-produto');
+        
+        cards.forEach(card => {
+            const tag = card.querySelector('.tag-categoria');
+            if (categoria === 'all' || tag.textContent.toLowerCase() === categoria) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
